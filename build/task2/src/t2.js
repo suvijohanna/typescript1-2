@@ -1,23 +1,18 @@
-function squareRoot(num: number | null | undefined): number | string {
+"use strict";
+function squareRoot(num) {
     if (num === null || num === undefined) {
         return 'Input is undefined or null.';
     }
-
     if (isNaN(num)) {
         return 'Invalid input. Please enter a valid number.';
     }
-
     if (num < 0) {
         return 'Cannot calculate square root of a negative number.';
     }
-
     const sqrt = Math.sqrt(num);
     return sqrt;
 }
-
 const userInput = prompt('syötähän numero:');
-
-const numberInput: number | undefined = userInput ? parseFloat(userInput) : undefined;
-
+const numberInput = userInput ? parseFloat(userInput) : undefined;
 const result = squareRoot(numberInput);
 console.log(result);
